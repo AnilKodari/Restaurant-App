@@ -1,0 +1,46 @@
+header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+
+.heading {
+  font-size: 22px;
+}
+
+.my-order-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-order {
+  padding-right: 20px;
+}
+
+.myOrders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartCount {
+  align-self: flex-start;
+  background-color: rgb(128, 83, 0);
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 50%;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+}
+
+.ai-shoppingCart {
+  font-size: 28px;
+  padding-right: 0px;
+}

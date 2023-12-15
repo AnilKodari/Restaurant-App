@@ -1,0 +1,27 @@
+.home-navbar {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.cat {
+  /* Add your regular styles here */
+  padding: 10px;
+  background-color: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.cat.active {
+  color: red;
+}
+
+li {
+  font-size: 18px;
+}
+
+.dish-list {
+  list-style-type: none;
+}

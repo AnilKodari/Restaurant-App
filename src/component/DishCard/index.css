@@ -1,0 +1,63 @@
+.menuList {
+  height: 100vh;
+}
+
+.all-menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.round-container {
+  width: 8%;
+}
+
+.description-container {
+  width: 45%;
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  color: #ffff;
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+}
+
+.para {
+  padding: 0px 10px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #ffff;
+}
+
+.calories-container {
+  width: 12%;
+}
+
+.image-container {
+  width: 35%;
+}
+
+.image {
+  width: 90%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.green-color {
+  color: green;
+}
+
+.red-color {
+  color: red;
+}
