@@ -89,7 +89,7 @@ class Home extends Component {
 
   updateCartCount = count => {
     this.setState(prevState => ({
-      cartCount: Math.max(prevState.cartCount + count, 0), // Ensure cartCount doesn't go below 0
+      cartCount: Math.max(prevState.cartCount + count, 0),
     }))
   }
 
@@ -110,28 +110,29 @@ class Home extends Component {
     )
   }
 
-  // Home.js
   render() {
     const {cartCount, activeMenuCategory, dishList} = this.state
 
     return (
       <>
         <div>
-          <Header cartCount={cartCount} />
+          <Header cartCount={cartCount} dishList={dishList} />
           <ul className="home-navbar">
-            {' '}
             {dishList.flatMap(dish =>
               dish.tableMenuList.map(menu => (
-                <button
-                  type="button"
-                  key={`${dish.restaurantId}-${menu.menuCategory}`}
-                  className={`cat ${
-                    menu.menuCategory === activeMenuCategory ? 'active' : ''
-                  }`}
-                  onClick={() => this.setActiveMenuCategory(menu.menuCategory)}
-                >
-                  {menu.menuCategory}
-                </button>
+                <li key={`${dish.restaurantId}-${menu.menuCategory}`}>
+                  <button
+                    type="button"
+                    className={`cat ${
+                      menu.menuCategory === activeMenuCategory ? 'active' : ''
+                    }`}
+                    onClick={() =>
+                      this.setActiveMenuCategory(menu.menuCategory)
+                    }
+                  >
+                    {menu.menuCategory}
+                  </button>
+                </li>
               )),
             )}
           </ul>

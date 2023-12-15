@@ -11,7 +11,6 @@ const DishCard = ({dishDetails, activeMenuCategory, updateCartCount}) => {
   const [dishQuantities, setDishQuantities] = useState({})
 
   useEffect(() => {
-    // Set initial quantities to 0 when activeMenuCategory changes
     setDishQuantities({})
   }, [activeMenuCategory])
 
@@ -41,9 +40,9 @@ const DishCard = ({dishDetails, activeMenuCategory, updateCartCount}) => {
             <h1> O </h1>
           </div>
           <div className="description-container">
-            <h1 key={dish.dishName}> {dish.dishName} </h1>{' '}
+            <h1 key={dish.dishName}> {dish.dishName} </h1>
             <p>
-              {dish.dishCurrency} {dish.dishPrice}{' '}
+              {dish.dishCurrency} {dish.dishPrice}
             </p>
             <p> {dish.dishDescription} </p>
             {dish.dishAvailability ? (
@@ -55,7 +54,7 @@ const DishCard = ({dishDetails, activeMenuCategory, updateCartCount}) => {
                 >
                   -
                 </button>
-                <p className="para"> {dishQuantities[dish.dishId] || 0} </p>{' '}
+                <p className="para"> {dishQuantities[dish.dishId] || 0} </p>
                 <button
                   type="button"
                   className="button"

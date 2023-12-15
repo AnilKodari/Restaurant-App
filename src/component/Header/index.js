@@ -1,9 +1,13 @@
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import './index.css'
 
-const Header = ({cartCount}) => (
+const Header = ({cartCount, dishList}) => (
   <div className="header">
-    <h1 className="heading"> UNI Resto Cafe </h1>
+    <div>
+      {dishList.length > 0 && (
+        <h1 className="heading">{dishList[0].restaurantName}</h1>
+      )}
+    </div>
     <div className="my-order-container">
       <p className="my-order"> My Orders </p>
       <div className="myOrders">
