@@ -1,22 +1,69 @@
-import CartContext from '../../Context/CartContext'
+// import CartContext from '../../context/CartContext'
+// import Header from '../Header'
+// import EmptyCartView from '../EmptyCartView'
+// import CartItem from '../CartItem'
+
+// const Cart = () => (
+//   <CartContext.Consumer>
+//     {value => {
+//       const {removeAllCartItems, cartList} = value
+//       console.log(cartList)
+//       const showEmptyView = cartList.length === 0
+//       const onClickRemoveAllBtn = () => {
+//         removeAllCartItems()
+//       }
+
+//       return (
+//         <>
+//           <Header dishList={cartList} />
+//           <div className="cart-container">
+//             {showEmptyView ? (
+//               <EmptyCartView />
+//             ) : (
+//               <div className="cart-content-container">
+//                 <h1 className="cart-heading">My Cart</h1>
+//                 <button
+//                   type="button"
+//                   className="remove-all-btn"
+//                   onClick={onClickRemoveAllBtn}
+//                 >
+//                   Remove All
+//                 </button>
+//                 {/* Display dishList here */}
+//                 <ul>
+//                   {cartList.map(dish => (
+//                     <CartItem key={dish.id}>{dish.name}</CartItem>
+//                   ))}
+//                 </ul>
+//               </div>
+//             )}
+//           </div>
+//         </>
+//       )
+//     }}
+//   </CartContext.Consumer>
+// )
+
+// export default Cart
+
+import CartContext from '../../context/CartContext'
 import Header from '../Header'
 import EmptyCartView from '../EmptyCartView'
-import CartListView from '../CartListView'
-import CartSummary from '../CartSummary'
+import CartItem from '../CartItem'
 
 const Cart = () => (
   <CartContext.Consumer>
     {value => {
-      const {removeAllCartItems, dishList} = value
-      console.log(dishList)
-      const showEmptyView = dishList.length === 0
+      const {removeAllCartItems, cartList} = value
+
+      const showEmptyView = cartList.length === 0
       const onClickRemoveAllBtn = () => {
         removeAllCartItems()
       }
 
       return (
         <>
-          <Header dishList={dishList} />
+          <Header dishList={cartList} />
           <div className="cart-container">
             {showEmptyView ? (
               <EmptyCartView />
@@ -32,13 +79,10 @@ const Cart = () => (
                 </button>
                 {/* Display dishList here */}
                 <ul>
-                  {dishList.map(dish => (
-                    <li key={dish.id}>{dish.name}</li>
-                    // You can customize this based on your dish structure
+                  {cartList.map(dish => (
+                    <CartItem key={dish.id} dishDetails={dish} />
                   ))}
                 </ul>
-                <CartListView />
-                <CartSummary />
               </div>
             )}
           </div>
